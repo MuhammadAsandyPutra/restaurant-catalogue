@@ -1,23 +1,12 @@
 import RestaurantList from "../components/RestaurantList";
+import Container from "../components/styled/Container";
 
 export default function Home({restaurants}) {
   return (
-    <div className='container'>
+    <Container maxWidth = "80%">
       <h1>Daftar Restoran</h1>
       <RestaurantList restaurants={restaurants} />
-      <style jsx>{`
-        .container {
-          max-width: 800px;
-          margin: 0 auto;
-          padding: 20px;
-        }
-
-        h1 {
-          text-align: center;
-          margin-bottom: 20px;
-        }
-      `}</style>
-    </div>
+    </Container>
   );
 }
 

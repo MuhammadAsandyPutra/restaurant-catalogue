@@ -1,21 +1,16 @@
-import RestaurantItem from "./RestaurantItem";
-import PropTypes from "prop-types";
-
-const RestaurantList = ({ restaurants }) => (
-  <div className="restaurant-list">
-    {restaurants.map((restaurant) => (
-      <RestaurantItem key={restaurant.id} {...restaurant} />
-    ))}
-    <style jsx>{`
-      .restaurant-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 20px;
-      }
-    `}</style>
-  </div>
-);
+import RestaurantItem from './RestaurantItem';
+import PropTypes from 'prop-types';
+import Grid from './styled/Grid';
+ 
+function RestaurantList({ restaurants }) {
+  return (
+    <Grid>
+      {restaurants.map((restaurant) => (
+        <RestaurantItem key={restaurant.id} {...restaurant} />
+      ))}
+    </Grid>
+  );
+}
 
 RestaurantList.propTypes = {
   restaurants: PropTypes.arrayOf(
